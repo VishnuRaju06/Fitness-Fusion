@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITNESS FUSION</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+        <nav class="header-nav" aria-label="navigation">
+            <div class="logo-content">
+                <img src="logo.png" alt="Logo" class="nav-icon" width="70"
+                    height="60" />
+                    <div class="logo">FITNESS <font color="red"><strong>FUSION</strong></font></div>
+            </div>
+            <img src="nav-icon.svg" alt="navigation icon" class="nav-hamburger"
+                width="30" height="30" />
+            <ul>
+                <li>
+                    <a href="index.html" >Home</a>
+                </li>
+                <li>
+                    <a href="aboutus.html" >About</a>
+                </li>
+                <li>
+                    <a href="memberships.html" >Memberships</a>
+                </li>
+                <li>
+                  <a href="services.html" >Services</a>
+              </li>
+                <li>
+                    <a href="ourteam.html" >Our Team</a>
+                </li>
+                <li>
+                  <a href="bmi.html" >BMI Calculator</a>
+              </li>
+                <li>
+                    <a href="contact.html" >Join Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+  <section class="section-aboutus" id="aboutus">
+    <div class="container aboutus">
+      <div class="section-aboutus-info" data-aos="fade-down">
+        <h2>About FITNESS FUSION</h2>
+        
+        <p>
+          Fitness fusion combines yoga, Pilates, cardio, strength training, and dance into one cohesive workout, targeting various muscle groups, enhancing flexibility, cardiovascular health, and overall well-being. Led by multi-disciplined instructors, classes offer a comprehensive and engaging workout, accommodating diverse fitness goals and preferences.
+        </p>
+        <h2>Our Vision</h2>
+        <p>
+          The vision of fitness fusion is one of holistic well-being, integrating diverse movement disciplines like yoga, Pilates, cardio, strength training, and dance. It promotes a balanced approach to fitness that nurtures not only physical health but also mental and emotional wellness. Inclusive and welcoming, it aims to create spaces where people of all backgrounds and abilities can explore their potential and thrive.
+        </p>
+      </div>
+      <div class="section-aboutus-images">
+        <figure class="about-box__image">
+          <img src="about-image1.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 0" data-aos="fade-down-right" />
+          <img src="about-image2.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 1" data-aos="fade-down" />
+          <img src="about-image3.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 2" data-aos="fade-down-left" />
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="section-aboutus" id="aboutus">
+    <div class="container aboutus">
+      <div class="section-aboutus-images">
+        <figure class="about-box__image">
+          <img src="gym1.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 0" data-aos="fade-down-right" />
+          <img src="gym2.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 1" data-aos="fade-down" />
+          <img src="gym3.jpg" alt="navigation icon" class="nav-hamburger"
+            width="320" height="190" style="--i: 2" data-aos="fade-down-left" />
+        </figure>
+      </div>
+      <div class="section-aboutus-info" data-aos="fade-down">
+        <h2>FEATURES</h2>
+        
+        <p>
+          <ul>
+            <li>Diverse range of classes: Yoga, Pilates, cardio, strength training, and dance fusion workouts.</li>
+            <li>State-of-the-art equipment for traditional exercises and dedicated spaces for specialized activities.</li>
+            <li>Experienced instructors trained in multiple disciplines leading dynamic fusion classes.</li>
+            <li>Amenities including locker rooms, showers, and relaxation areas for post-workout recovery.</li>
+            <li>Personalized training programs and nutritional guidance available.</li>
+            <li>Community events to foster a supportive fitness community.</li>
+          </ul>
+          
+          
+        </p>
+      
+      </div>
+      
+    </div>
+  </section>
+  <footer class="section-footer" id="footer">
+    <div class="footer-box container">
+      <div class="contact-details">
+        <h2>FITNESS FUSION</h2>
+        <div class="contact-company-address">
+          VIT University<br /> Vellore, Tamil Nadu 632014,<br />INDIA
+        </div>
+        <div class="contact-social-links">
+          <img src="whatsapp.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="facebook.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="instagram.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="twitter.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="navigation">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>
+            <a href="aboutus.html">About</a>
+          </li>
+          <li>
+            <a href="memberships.html">Memberships</a>
+          </li>
+          <li>
+            <a href="services.html" >Services</a>
+        </li>
+          <li>
+            <a href="ourteam.html">Our Team</a>
+          </li>
+          <li>
+            <a href="bmi.html">BMI Calculator</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="newsletter">
+        <h3>News Letter</h3>
+        <input id="emailInput" type="email" placeholder="email@domain.com" />
+        <button onclick="subscribe()">Subscribe</button>
+      </div>
+      
+      <script>
+        function isValidEmail(email) {
+          // Basic email validation using regex
+          return /\S+@\S+\.\S+/.test(email);
+        }
+      
+        function subscribe() {
+          var emailInput = document.getElementById("emailInput");
+          var email = emailInput.value.trim();
+      
+          if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+      
+          // Here you can perform further actions like sending the email to a server for processing
+          alert("Subscribed successfully!");
+          emailInput.value = ""; // Clear the input field after successful subscription
+        }
+      </script>
+      
+    </div>
+    <hr />
+    <div class="container copyrights">
+      <div>Copyright 2024 © by FITNESS FUSION</div>
+    </div>
+  </footer>
+</body>
+
+</html>

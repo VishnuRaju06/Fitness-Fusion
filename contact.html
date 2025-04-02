@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITNESS FUSION</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="header-nav" aria-label="navigation">
+        <div class="logo-content">
+          <img src="logo.png" alt="Logo" class="nav-icon" width="70" height="60" />
+          <div class="logo">FITNESS <font color="red"><strong>FUSION</strong></font></div>
+        </div>
+        <img src="nav-icon.svg" alt="navigation icon" class="nav-hamburger" width="30" height="30" />
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="aboutus.html">About</a>
+          </li>
+          <li>
+            <a href="memberships.html">Memberships</a>
+          </li>
+          <li>
+            <a href="ourteam.html">Our Team</a>
+          </li>
+          <li>
+            <a href="bmi.html">BMI Calculator</a>
+          </li>
+          <li>
+            <a href="contact.html">Join Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="section-contact" id="contact">
+    <br>
+    <br>
+    <br>
+    <div class="container contact">
+      <div class="contactus">
+        <form action="store_data.php" method="post">
+          <h2 class="title">GET IN TOUCH</h2>
+          <div class="class-input"><input type="text" placeholder="Name" /></div>
+          <div class="class-input"><input type="email" placeholder="Email" /></div>
+
+          <div class="class-input"><input type="number" placeholder="Number" /></div>
+          <div class="class-input"><textarea placeholder="Message"></textarea></div>
+          <button>SEND</button>
+        </form>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              var form = document.querySelector('form');
+      
+              // Function to display error messages
+              function showError(input, message) {
+                  var errorElement = input.nextElementSibling; // Get the next sibling element
+                  if (errorElement && errorElement.classList.contains('error-message')) {
+                      errorElement.textContent = message; // Display error message
+                  } else {
+                      // If error element doesn't exist, create one
+                      errorElement = document.createElement('span');
+                      errorElement.classList.add('error-message');
+                      errorElement.textContent = message;
+                      input.parentNode.insertBefore(errorElement, input.nextSibling); // Insert error message after input
+                  }
+              }
+      
+              // Function to remove error messages
+              function removeError(input) {
+                  var errorElement = input.nextElementSibling;
+                  if (errorElement && errorElement.classList.contains('error-message')) {
+                      errorElement.parentNode.removeChild(errorElement); // Remove error message
+                  }
+              }
+      
+              // Validation function for each input field
+              function validateInput(input, regex, errorMessage) {
+                  var value = input.value.trim();
+                  if (value === '') {
+                      showError(input, errorMessage); // Display error if value is empty
+                      return false;
+                  } else if (!regex.test(value)) {
+                      showError(input, errorMessage); // Display error if value doesn't match regex
+                      return false;
+                  } else {
+                      removeError(input); // Remove error if input is valid
+                      return true;
+                  }
+              }
+      
+              // Real-time validation for name input
+              var nameInput = document.querySelector('input[type="text"]');
+              nameInput.addEventListener('input', function () {
+                  validateInput(nameInput, /^[a-zA-Z\s]+$/, 'Please enter a valid name.');
+              });
+      
+              // Real-time validation for email input
+              var emailInput = document.querySelector('input[type="email"]');
+              emailInput.addEventListener('input', function () {
+                  validateInput(emailInput, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.');
+              });
+      
+              // Real-time validation for number input
+              var numberInput = document.querySelector('input[type="number"]');
+              numberInput.addEventListener('input', function () {
+                  var value = numberInput.value.trim();
+                  if (value.length > 10) {
+                      numberInput.value = value.slice(0, 10); // Limit the input to 10 characters
+                  }
+                  validateInput(numberInput, /^\d{10}$/, 'Please enter a valid 10-digit phone number.');
+              });
+      
+              // Real-time validation for message input
+              var messageInput = document.querySelector('textarea');
+              messageInput.addEventListener('input', function () {
+                  validateInput(messageInput, /.+/, 'Please enter a message.');
+              });
+      
+              // Form submission
+              form.addEventListener('submit', function (event) {
+                  event.preventDefault(); // Prevent default form submission
+      
+                  // Validate all fields before submitting
+                  var isNameValid = validateInput(nameInput, /^[a-zA-Z\s]+$/, 'Please enter a valid name.');
+                  var isEmailValid = validateInput(emailInput, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.');
+                  var isNumberValid = validateInput(numberInput, /^\d{10}$/, 'Please enter a valid 10-digit phone number.');
+                  var isMessageValid = validateInput(messageInput, /.+/, 'Please enter a message.');
+      
+                  // If all fields are valid, submit the form
+                  if (isNameValid && isEmailValid && isNumberValid && isMessageValid) {
+                      var formData = {
+                          name: nameInput.value.trim(),
+                          email: emailInput.value.trim(),
+                          number: numberInput.value.trim(),
+                          message: messageInput.value.trim()
+                      };
+      
+                      // Simulate form submission (replace with actual submission logic)
+                      console.log('Form submitted:', formData);
+                      alert('Thank you! Your message has been sent.');
+                      form.reset(); // Reset the form
+                  }
+              });
+          });
+      </script>
+      
+      
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7736.31935312403!2d79.1376412295799!3d12.953766816352605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad470003016095%3A0xbe5ddbfe26ae08f9!2sPR%20fit%20fusion!5e0!3m2!1sen!2sin!4v1713691292648!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+  <footer class="section-footer" id="footer">
+    <div class="footer-box container">
+      <div class="contact-details">
+        <h2>FITNESS FUSION</h2>
+        <div class="contact-company-address">
+          VIT University<br /> Vellore, Tamil Nadu 632014,<br />INDIA
+        </div>
+        <div class="contact-social-links">
+          <img src="whatsapp.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="facebook.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="instagram.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="twitter.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="navigation">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>
+            <a href="aboutus.html">About</a>
+          </li>
+          <li>
+            <a href="memberships.html">Memberships</a>
+          </li>
+          <li>
+            <a href="ourteam.html">Our Team</a>
+          </li>
+          <li>
+            <a href="bmi.html">BMI Calculator</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="newsletter">
+        <h3>News Letter</h3>
+        <input id="emailInput" type="email" placeholder="email@domain.com" />
+        <button onclick="subscribe()">Subscribe</button>
+      </div>
+      
+      <script>
+        function isValidEmail(email) {
+          // Basic email validation using regex
+          return /\S+@\S+\.\S+/.test(email);
+        }
+      
+        function subscribe() {
+          var emailInput = document.getElementById("emailInput");
+          var email = emailInput.value.trim();
+      
+          if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+      
+          // Here you can perform further actions like sending the email to a server for processing
+          alert("Subscribed successfully!");
+          emailInput.value = ""; // Clear the input field after successful subscription
+        }
+      </script>
+      
+    </div>
+    <hr />
+    <div class="container copyrights">
+      <div>Copyright 2024 © by FITNESS FUSION</div>
+    </div>
+  </footer>
+</body>
+
+</html>

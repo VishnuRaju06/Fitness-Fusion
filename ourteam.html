@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITNESS FUSION</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+        <nav class="header-nav" aria-label="navigation">
+            <div class="logo-content">
+                <img src="logo.png" alt="Logo" class="nav-icon" width="70"
+                    height="60" />
+                    <div class="logo">FITNESS <font color="red"><strong>FUSION</strong></font></div>
+            </div>
+            <img src="nav-icon.svg" alt="navigation icon" class="nav-hamburger"
+                width="30" height="30" />
+            <ul>
+                <li>
+                    <a href="index.html" >Home</a>
+                </li>
+                <li>
+                    <a href="aboutus.html" >About</a>
+                </li>
+                <li>
+                    <a href="memberships.html" >Memberships</a>
+                </li>
+                <li>
+                  <a href="services.html" >Services</a>
+              </li>
+                <li>
+                    <a href="ourteam.html" >Our Team</a>
+                </li>
+                <li>
+                  <a href="bmi.html" >BMI Calculator</a>
+              </li>
+                <li>
+                    <a href="contact.html" >Join Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+  <section class="section-ourteam" id="ourteam">
+    <div class="container ourteam" data-aos="fade-down">
+      <h2 class="title">Our Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <img src="rock.jpg" alt="Logo" class="member-logo" />
+          <div class="team-memmber-info">
+            <div class="member-name">ROCK</div>
+            <div class="member-desg">Weight Lifting Coach</div>
+            <div class="member-desc">Specializes in sculpting strength and muscle with precision</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="roman.jpg" alt="Logo" class="nav-icon" />
+          <div class="team-memmber-info">
+            <div class="member-name">ROMAN</div>
+            <div class="member-desg">MMA Coach</div>
+            <div class="member-desc">Hones combat skills and self-defense with expertise</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="ramdev.jpg" alt="Logo" class="nav-icon" />
+          <div class="team-memmber-info">
+            <div class="member-name">BABA RAMDEV</div>
+            <div class="member-desg">Yoga Instructor</div>
+            <div class="member-desc">Guides you to inner peace and flexibility through mindful yoga practice</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="john.jpg" alt="Logo" class="nav-icon" />
+          <div class="team-memmber-info">
+            <div class="member-name">JOHN CENA</div>
+            <div class="member-desg">Personal Trainer</div>
+            <div class="member-desc">Your path to achieving fitness goals, one personalized session at a time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="section-footer" id="footer">
+    <div class="footer-box container">
+      <div class="contact-details">
+        <h2>FITNESS FUSION</h2>
+        <div class="contact-company-address">
+          VIT University<br /> Vellore, Tamil Nadu 632014,<br />INDIA
+        </div>
+        <div class="contact-social-links">
+          <img src="whatsapp.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="facebook.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="instagram.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+          <img src="twitter.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="navigation">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>
+            <a href="aboutus.html">About</a>
+          </li>
+          <li>
+            <a href="memberships.html">Memberships</a>
+          </li>
+          <li>
+            <a href="services.html" >Services</a>
+        </li>
+          <li>
+            <a href="ourteam.html">Our Team</a>
+          </li>
+          <li>
+            <a href="bmi.html">BMI Calculator</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="newsletter">
+        <h3>News Letter</h3>
+        <input id="emailInput" type="email" placeholder="email@domain.com" />
+        <button onclick="subscribe()">Subscribe</button>
+      </div>
+      
+      <script>
+        function isValidEmail(email) {
+          // Basic email validation using regex
+          return /\S+@\S+\.\S+/.test(email);
+        }
+      
+        function subscribe() {
+          var emailInput = document.getElementById("emailInput");
+          var email = emailInput.value.trim();
+      
+          if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+      
+          // Here you can perform further actions like sending the email to a server for processing
+          alert("Subscribed successfully!");
+          emailInput.value = ""; // Clear the input field after successful subscription
+        }
+      </script>
+      
+    </div>
+    <hr />
+    <div class="container copyrights">
+      <div>Copyright 2024 © by FITNESS FUSION</div>
+    </div>
+  </footer>
+</body>
+
+</html>
